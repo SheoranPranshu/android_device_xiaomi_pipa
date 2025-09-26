@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# ──────────────────────────────────────────────────────────────
-# 🎨 Terminal Colors
-# ──────────────────────────────────────────────────────────────
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
@@ -16,15 +13,11 @@ warn()    { echo -e "${YELLOW}${BOLD}!${NC} ${YELLOW}$1${NC}"; }
 error()   { echo -e "${RED}${BOLD}✖${NC} ${RED}$1${NC}"; }
 divider() { echo -e "${BOLD}──────────────────────────────────────────────${NC}"; }
 
-# Ensure script is run from repo root
 ROOT_DIR=$(pwd)
 
-# ──────────────────────────────────────────────────────────────
-# Prompt for Axion Patch
-# ──────────────────────────────────────────────────────────────
 read -p "Do you want to apply the axion patch? (yes/no): " APPLY_AXION
 if [ "$APPLY_AXION" == "yes" ]; then
-    KERNEL_BRANCH="16"
+    KERNEL_BRANCH="15"
     info "Attempting to apply axion patch..."
     if cd device/xiaomi/pipa 2>/dev/null; then
         patch_file="patches/axion.patch"
@@ -55,12 +48,9 @@ if [ "$APPLY_AXION" == "yes" ]; then
         warn "Could not enter device/xiaomi/pipa; skipping axion patch."
     fi
 else
-    KERNEL_BRANCH="16.ksun" # Default branch if not applying axion patch
+    KERNEL_BRANCH="15.ksun"
 fi
 
-# ──────────────────────────────────────────────────────────────
-# clone_if_missing + clean_clone (with depth=2)
-# ──────────────────────────────────────────────────────────────
 clone_if_missing() {
     local repo_url=$1 branch=$2 target_dir=$3
     [ -z "$repo_url" ] || [ -z "$branch" ] || [ -z "$target_dir" ] && {
@@ -98,30 +88,19 @@ clean_clone() {
     return 0
 }
 
-# ──────────────────────────────────────────────────────────────
-# Kernel Repo (using dynamic branch selection)
-# ──────────────────────────────────────────────────────────────
 divider
 info "Cloning kernel into kernel/xiaomi/sm8250..."
 clone_if_missing "https://github.com/Xiaomi-Pad6/kernel_xiaomi_sm8250" "$KERNEL_BRANCH" "kernel/xiaomi/sm8250"
 divider
 
-# ──────────────────────────────────────────────────────────────
-# Other Repos
-# ──────────────────────────────────────────────────────────────
 info "Setting up other repositories..."
-clone_if_missing "https://github.com/Xiaomi-Pad6/device_xiaomi_sm8250-common" "16" "device/xiaomi/sm8250-common"
-clone_if_missing "https://github.com/Xiaomi-Pad6/vendor_xiaomi_sm8250-common" "16" "vendor/xiaomi/sm8250-common"
-clone_if_missing "https://github.com/Xiaomi-Pad6/vendor_xiaomi_pipa" "16" "vendor/xiaomi/pipa"
-clone_if_missing "https://github.com/PocoF3Releases/vendor_qcom_wfd.git" "bka" "vendor/qcom/wfd"
-clone_if_missing "https://github.com/PocoF3Releases/device_qcom_wfd.git" "bka" "device/qcom/wfd"
+clone_if_missing "https://github.com/Xiaomi-Pad6/device_xiaomi_sm8250-common" "15" "device/xiaomi/sm8250-common"
+clone_if_missing "https://github.com/Xiaomi-Pad6/vendor_xiaomi_sm8250-common" "15" "vendor/xiaomi/sm8250-common"
+clone_if_missing "https://github.com/Xiaomi-Pad6/vendor_xiaomi_pipa" "15" "vendor/xiaomi/pipa"
 clean_clone "https://github.com/gensis01/hardware_xiaomi.git"  "aosp-16" "hardware/xiaomi"
 clean_clone "https://github.com/PocoF3Releases/packages_resources_devicesettings.git" "aosp-16" "packages/resources/devicesettings"
 divider
 
-# ──────────────────────────────────────────────────────────────
-# Apply Recovery Patch (non-fatal warning only)
-# ──────────────────────────────────────────────────────────────
 apply_recovery_patch() {
     local root_dir
     root_dir=$(pwd)
@@ -161,9 +140,6 @@ apply_recovery_patch() {
     cd "$root_dir"
 }
 
-# ──────────────────────────────────────────────────────────────
-# Apply Tablet FW Patch (git apply; no git am)
-# ──────────────────────────────────────────────────────────────
 apply_tablet_patch() {
     local root_dir
     root_dir=$(pwd)
@@ -203,9 +179,6 @@ apply_tablet_patch() {
     cd "$root_dir"
 }
 
-# ──────────────────────────────────────────────────────────────
-# Setup firmware
-# ──────────────────────────────────────────────────────────────
 setup_firmware() {
     local root_dir
     root_dir=$(pwd)
@@ -302,9 +275,6 @@ setup_firmware() {
     success "Firmware setup complete: moved 'radio' directory to $target_dir/radio"
 }
 
-# ──────────────────────────────────────────────────────────────
-# Run Patch Setup
-# ──────────────────────────────────────────────────────────────
 DEVICE_PATH="${ROOT_DIR}/device/xiaomi/pipa"
 mkdir -p "$DEVICE_PATH/patches"
 
