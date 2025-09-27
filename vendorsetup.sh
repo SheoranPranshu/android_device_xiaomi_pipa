@@ -183,8 +183,8 @@ setup_firmware() {
     local root_dir
     root_dir=$(pwd)
     local target_dir="${root_dir}/vendor/xiaomi/pipa"
-    local firmware_url="https://github.com/SheoranPranshu/proprietary_vendor_xiaomi_pipa/releases/download/fw-radio-OS2.0.11.0.UMZCNXM-pipa/OS2.0.11.0.UMZCNXM-pipa.zip"
-    local tmp_zip="/tmp/OS2.0.11.0.UMZCNXM-pipa.zip"
+    local firmware_url="https://github.com/Xiaomi-Pad6/vendor_xiaomi_pipa/releases/download/pipa-2.0.8.0-MI/pipa-2.0.8.0-MI.zip"
+    local tmp_zip="/tmp/pipa-2.0.8.0-MI.zip"
     local tmp_extract="/tmp/firmware_extract"
 
     info "Setting up firmware..."
