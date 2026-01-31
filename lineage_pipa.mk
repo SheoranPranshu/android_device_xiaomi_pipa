@@ -15,10 +15,14 @@ $(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
 $(call inherit-product, device/xiaomi/pipa/device.mk)
 
 # Inherit keys
-$(call inherit-product, vendor/lineage/signing/keys/keys.mk)
+$(call inherit-product, vendor/lineage-priv/keys/keys.mk)
 
-# Derpfest
+# Derpfest Flags
 DERPFEST_BUILD_TYPE := Official
+TARGET_EXCLUDE_BACKUPTOOL := false
+TARGET_INCLUDE_ACCORD := false
+TARGET_SUPPORTS_64_BIT_APPS := true
+TARGET_SUPPORTS_QUICK_TAP := false
 WITH_GMS := true
 
 PRODUCT_NAME := lineage_pipa
@@ -28,7 +32,6 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Pad 6
 
 PRODUCT_CHARACTERISTICS := tablet
-TARGET_SUPPORTS_QUICK_TAP := false
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
