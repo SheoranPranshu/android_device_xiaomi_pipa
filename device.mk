@@ -52,7 +52,7 @@ PRODUCT_PACKAGES += \
 
 # Peripheral Manager
 PRODUCT_PACKAGES += \
-    XiaomiPeripheralManager
+    PipaControls
 
 # Permissions
 PRODUCT_COPY_FILES += \
