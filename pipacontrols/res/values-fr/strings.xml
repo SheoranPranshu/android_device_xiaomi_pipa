@@ -1,48 +1,189 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!--
      Copyright (C) 2026 The LineageOS Project
-
+     Copyright (C) 2026 nullpointer1101
+     Copyright (C) 2026 Arnaud Quette
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
     
-    <string name="app_name">Gestionnaire de périphériques Xiaomi</string>
+    <string name="pipa_controls_title">Contrôles Pipa</string>
+    <string name="pipa_controls_summary">Paramètres spécifiques au périphérique</string>
 
-    
+    <!-- Category headers -->
+    <string name="pipa_category_accessories">Accessoires</string>
+    <string name="pipa_category_display">Affichage</string>
+    <string name="pipa_category_performance">Performances</string>
+    <string name="pipa_category_touch">Tactile &amp; Saisie</string>
+    <string name="pipa_category_battery">Batterie</string>
+    <string name="pipa_category_reset">Réinitialiser</string>
+
+    <!-- Stylus -->
     <string name="stylus_title">Stylet</string>
     <string name="stylus_summary">Paramètres du stylet</string>
-    <string name="stylus_switch_title">Mode stylet</string>
-    <string name="stylus_tile_label">Mode stylet</string>
+    <string name="stylus_switch_title">Mode du stylet</string>
+    <string name="stylus_tile_label">Mode du stylet</string>
     <string name="force_stylus_switch_title">Forcer la reconnaissance du stylet</string>
-    <string name="force_stylus_switch_summary">Permet au stylet officiel de fonctionner sans Bluetooth et prend en charge les stylets tiers. Force également l\'écran à fonctionner à 60/120 Hz même lorsqu\'aucun stylet n\'est connecté.</string>
+    <string name="force_stylus_switch_summary">Permet au stylet officiel de fonctionner sans Bluetooth et active la prise en charge des stylets tiers. Force également l\'écran à fonctionner à 60/120 Hz même lorsqu\'aucun stylet n\'est connecté.</string>
     <string name="stylus_refresh_rate_title">Taux de rafraîchissement</string>
     <string name="stylus_refresh_rate_summary">Sélectionnez le taux de rafraîchissement de l\'affichage pour le mode stylet</string>
     <string name="stylus_more_info">Le mode Stylet permet des taux de rafraîchissement compatibles avec le stylet lorsqu\'un stylet pris en charge est connecté. L\'écran passe à 60 Hz ou 120 Hz uniquement lorsque le stylet est connecté.</string>
-
-    
-    <string name="refresh_rate_dynamic">Dynamique (60/120 Hz)</string>
-    <string name="refresh_rate_60hz">Fixe 60 Hz</string>
-    <string name="refresh_rate_120hz">Fixe 120 Hz</string>
-
-    
+    <string name="refresh_rate_dynamic">Dynamique (60/120Hz)</string>
+    <string name="refresh_rate_60hz">Fixe 60Hz</string>
+    <string name="refresh_rate_120hz">Fixe 120Hz</string>
     <string name="stylus_status_active">Actif</string>
     <string name="stylus_status_inactive">Inactif</string>
     <string name="stylus_footer_status">Statut : %s</string>
     <string name="stylus_footer_refresh_rate">Taux de rafraîchissement : %s</string>
 
-    
+    <!-- Smart Cover -->
     <string name="lid_title">Etui intelligent</string>
     <string name="lid_summary">Paramètres de l\'étui intelligent</string>
     <string name="lid_switch_title">Activer/Désactiver le comportement de l\'étui intelligent</string>
-    <string name="lid_switch_summary">Cela change le comportement de l\'étui intelligent</string>
+    <string name="lid_switch_summary">Cela bascule le comportement de l\'étui intelligent</string>
 
-    
+    <!-- Keyboard -->
     <string name="keyboard_title">Clavier intelligent</string>
-    <string name="keyboard_summary">Paramètres du clavier intelligent</string>
+    <string name="keyboard_summary">Surveillance de la connexion au clavier intelligent</string>
     <string name="keyboard_switch_title">Prise en charge du clavier</string>
-    <string name="keyboard_more_info">Activez cette option uniquement si vous possédez le clavier intelligent Xiaomi. Lorsqu\'il est activé, le système détectera (espérons-le) automatiquement la connexion du clavier et gérera les états d\'alimentation. La désactivation de cette option permet d\'économiser la batterie et les ressources du système.\n\nRemarque : Ceci est distinct des claviers Bluetooth, qui fonctionnent sans ce paramètre.</string>
+    <string name="keyboard_more_info">Activez cette option uniquement si vous possédez le clavier intelligent Xiaomi. Lorsqu\'elle est activé, le système détectera (espérons-le) automatiquement la connexion au clavier et gérera les états d\'alimentation. La désactivation de cette option permet d\'économiser la batterie et les ressources du système.\n\nRemarque : Ceci est distinct des claviers Bluetooth, qui fonctionnent sans ce paramètre.</string>
     <string name="keyboard_status_enabled">Surveillance du clavier activée</string>
     <string name="keyboard_status_disabled">Surveillance du clavier désactivée</string>
     <string name="keyboard_footer_status">Statut : %s</string>
+
+    <!-- Bypass Charging -->
+    <string name="bypass_charging_title">Charge directe</string>
+    <string name="bypass_charging_summary">Suspendre l\'alimentation de la batterie pour fonctionner directement à partir du chargeur</string>
+    <string name="bypass_charging_status_on">Statut : Actif &#8212; L\'alimentation de la batterie est suspendue</string>
+    <string name="bypass_charging_status_off">Statut : Inactif &#8212; En charge normale</string>
+    <string name="bypass_charging_not_supported">La charge directe n\'est pas prise en charge par le noyau actuel</string>
+    <string name="bypass_charging_footer">Lorsqu\'elle est activée, l\'énergie circule directement du chargeur vers l\'appareil, en contournant la batterie. La batterie ne se chargera pas tant que cette fonction est active.\n\nLa fonctionnalité se réinitialise automatiquement au redémarrage.</string>
+
+    <!-- Per-app Refresh Rate -->
+    <string name="refresh_title">Taux de rafraîchissement par application</string>
+    <string name="refresh_summary">Définir le taux de rafraîchissement maximum pour une application spécifique</string>
+    <string name="refresh_default">Défaut</string>
+    <string name="refresh_standard">60Hz</string>
+    <string name="refresh_high">90Hz</string>
+    <string name="refresh_extreme">120Hz</string>
+    <string name="refresh_ultra">144Hz</string>
+
+    <!-- Saturation -->
+    <string name="saturation_title">Saturation de l\'affichage</string>
+    <string name="saturation_summary">Contrôler le niveau de saturation de l\'écran</string>
+    <string name="saturation_footer_summary">La modification du mode de couleur dans les paramètres d\'affichage annulera le niveau de saturation, nécessitant sa réapplication.</string>
+
+    <!-- App Priority -->
+    <string name="app_priority_title">Priorité des applications de premier plan</string>
+    <string name="app_priority_summary">Améliorez la planification du processeur pour l\'application active</string>
+    <string name="app_priority_not_supported">Non pris en charge par le noyau actuel</string>
+    <string name="app_priority_high_warning_inline">peut augmenter le taux de destruction des applications en arrière-plan</string>
+    <string name="app_priority_footer">Augmente la priorité de planification du processeur de l\'application actuellement à l\'écran et, à des niveaux supérieurs, de la pile d\'applications de premier plan.\n\n<b>Désactivé</b> : aucune amélioration appliquée (valeur par défaut du système).\n<b>Faible</b> – légère augmentation de l\'application principale uniquement.\n<b>Moyenne</b> – augmentation modérée de l\'application principale et des applications de premier plan.\n<b>Élevé</b> – forte augmentation. À ce niveau, le noyau peut récupérer la mémoire des applications en arrière-plan plus tôt, ce qui peut entraîner le rechargement des applications lorsque vous y revenez.\n\nRéappliqué automatiquement après le redémarrage.</string>
+
+    <!-- CPU Governor -->
+    <string name="cpu_governor_title">Régulateur du processeur</string>
+    <string name="cpu_governor_summary">Contrôle la manière dont le processeur ajuste sa fréquence</string>
+    <string name="cpu_governor_not_supported">Non pris en charge par le noyau actuel</string>
+    <string name="cpu_governor_schedutil">Intelligent - schedutil (Recommandé)</string>
+    <string name="cpu_governor_performance">Performances - toujours la fréquence maximale</string>
+    <string name="cpu_governor_powersave">Économie d\'énergie - toujours la fréquence minimale</string>
+    <string name="cpu_governor_footer"><b>Intelligent (schedutil)</b> – Ajuste la fréquence du processeur en fonction de la charge réelle du planificateur. Meilleur équilibre entre performances et batterie pour une utilisation quotidienne.\n\n<b>Performances</b> : verrouille tous les cœurs de processeur à la fréquence maximale à tout moment. Performances les plus constantes, mais décharge la batterie plus rapidement et chauffe plus. Recommandé pour les jeux prolongés.\n\n<b>Économie d\'énergie</b> : verrouille tous les cœurs à la fréquence minimale. Réduit considérablement la décharge de la batterie mais rend l’appareil lent. Utile uniquement pour les tâches très légères.\n\nRemarque : Le régulateur peut être temporairement outrepassé par le système lors du lancement d\'applications ou d\'événements tactiles. C\'est normal.\n\nRéappliqué automatiquement après le redémarrage.</string>
+
+    <!-- CPU Frequency Cap -->
+    <string name="cpu_freq_cap_title">Limite de fréquence du processeur</string>
+    <string name="cpu_freq_cap_summary">Limiter la vitesse maximale du cœur du processeur principal</string>
+    <string name="cpu_freq_cap_not_supported">Non pris en charge par le noyau actuel</string>
+    <string name="cpu_freq_cap_none">Pas de limite (par défaut)</string>
+    <string name="cpu_freq_cap_high">Haute — 2.4 GHz</string>
+    <string name="cpu_freq_cap_medium">Moyenne — 1.6 GHz</string>
+    <string name="cpu_freq_cap_low">Basse — 1.3 GHz</string>
+    <string name="cpu_freq_cap_footer">Limite la vitesse d\'horloge maximale du cœur du processeur PRIME (cpu7). Seul le cœur supérieur est plafonné ; les coeurs LITTLE et BIG ne sont pas affectés.\n\nUtile pour réduire la température de l\'appareil et l\'épuisement de la batterie pendant les longues sessions de jeu ou vidéo où des performances optimales ne sont pas nécessaires.\n\n<b>Avertissement :</b> Un réglage trop bas entraînera des baisses de performances notables dans les applications et les jeux exigeants. Si l\'appareil semble lent, relevez la limite ou retirez-la entièrement.\n\nRéappliqué automatiquement après le redémarrage.</string>
+
+    <!-- GPU Governor -->
+    <string name="gpu_governor_title">Régulateur du GPU</string>
+    <string name="gpu_governor_summary">Contrôle la façon dont le GPU Adreno ajuste sa fréquence</string>
+    <string name="gpu_governor_not_supported">Non pris en charge par le noyau actuel</string>
+    <string name="gpu_governor_adreno_tz">Intelligent — msm-adreno-tz (Recommandé)</string>
+    <string name="gpu_governor_performance">Performances - toujours la fréquence maximale</string>
+    <string name="gpu_governor_powersave">Économie d\'énergie - toujours la fréquence minimale</string>
+    <string name="gpu_governor_simple_ondemand">À la demande — simple_ondemand</string>
+    <string name="gpu_governor_footer"><b>Intelligent (msm-adreno-tz)</b> — Le régulateur GPU sensible à la chaleur de Qualcomm. Ajuste intelligemment la fréquence du GPU en fonction de la charge et de la température. Idéal pour une utilisation quotidienne et pour les jeux.\n\n<b>Performances</b> : verrouille le GPU à la fréquence maximale (670 MHz) à tout moment. Fournit les fréquences d’images les plus cohérentes mais augmente la chaleur et l’épuisement de la batterie. Idéal pour les jeux exigeants où les performances stables du GPU comptent plus que la température.\n\n<b>Économie d\'énergie</b> : verrouille le GPU à la fréquence minimale (305 MHz). Réduit considérablement l\'épuisement de la batterie, mais ralentit toutes les tâches gourmandes en GPU. Convient uniquement aux tâches 2D simples.\n\n<b>À la demande</b> – Un régulateur d\'ajustement de fréquence générique. Augmente rapidement la fréquence du GPU lors du chargement, mais sans la prise en compte thermique de msm-adreno-tz.\n\nRéappliqué automatiquement après le redémarrage.</string>
+
+    <!-- GPU Frequency Cap -->
+    <string name="gpu_freq_cap_title">Limite de fréquence du GPU</string>
+    <string name="gpu_freq_cap_summary">Limiter la vitesse maximale du GPU Adreno</string>
+    <string name="gpu_freq_cap_not_supported">Non pris en charge par le noyau actuel</string>
+    <string name="gpu_freq_cap_none">Pas de limite — 670 MHz (par défaut)</string>
+    <string name="gpu_freq_cap_high">Haute — 587 MHz</string>
+    <string name="gpu_freq_cap_medium">Moyenne — 525 MHz</string>
+    <string name="gpu_freq_cap_balanced">Équilibrée — 490 MHz</string>
+    <string name="gpu_freq_cap_low">Basse — 400 MHz</string>
+    <string name="gpu_freq_cap_min">Minimum — 305 MHz</string>
+    <string name="gpu_freq_cap_footer">Limite la vitesse d\'horloge maximale du GPU Adreno. Utile pour réduire la chaleur et stabiliser les fréquences d\'images pendant les longues sessions de jeu : un GPU limité fonctionnant constamment à une fréquence inférieure semble souvent plus fluide qu\'un GPU qui ralentit de manière imprévisible sous la pression thermique.\n\n<b>Conseil pour les jeux :</b> Essayez 490 MHz ou 525 MHz pour un bon équilibre entre des fréquences d\'images stables et des températures gérables.\n\n<b>Avertissement :</b> Un réglage trop bas entraînera des chutes d\'image visibles et des saccades dans les jeux et applications gourmands en GPU. Si les graphiques semblent lents ou saccadés, augmentez la limite.\n\nRéappliqué automatiquement après le redémarrage.</string>
+
+    <!-- Prefer Big Cores -->
+    <string name="prefer_big_cores_title">Préférer les grands cœurs (BIG)</string>
+    <string name="prefer_big_cores_summary">Poussez les tâches vers des cœurs de processeur plus grands</string>
+    <string name="prefer_big_cores_not_supported">Non pris en charge par le noyau actuel</string>
+    <string name="prefer_big_cores_footer">Lorsqu\'il est activé, le planificateur du noyau pousse activement les tâches vers les cœurs de processeur BIG et PRIME les plus grands au lieu de les laisser s\'exécuter sur les petits cœurs (LITTLE).\n\nCela améliore les performances soutenues et réduit le risque que l\'application active semble lente, mais augmente la consommation d\'énergie puisque les cœurs plus grands consomment plus d\'énergie.\n\nRéappliqué automatiquement après le redémarrage.</string>
+
+    <!-- Core Migration Speed -->
+    <string name="core_migration_title">Vitesse de migration de coeurs</string>
+    <string name="core_migration_summary">Contrôle la rapidité avec laquelle les tâches se déplacent entre les clusters de processeurs</string>
+    <string name="core_migration_not_supported">Non pris en charge par le noyau actuel</string>
+    <string name="core_migration_conservative">Conservatrice</string>
+    <string name="core_migration_default">Défaut (Recommandé)</string>
+    <string name="core_migration_aggressive">Aggressive</string>
+    <string name="core_migration_footer"><b>Conservatrice</b> – Les tâches restent plus longtemps sur les petits cœurs (LITTLE). Économise la batterie, mais peut sembler légèrement plus lent lors des rafales.\n\n<b>Défaut</b> : seuils équilibrés. Idéal pour un usage quotidien.\n\n<b>Agressive</b> : les tâches sont transférées plus facilement vers les cœurs BIG et PRIME. Améliore la réactivité et réduit les micro-sauts, mais augmente l\'épuisement de la batterie, en particulier pour les applications en arrière-plan.\n\n<b>Avertissement :</b> Une migration agressive peut augmenter sensiblement l\'épuisement de la batterie en arrière-plan.\n\nRéappliqué automatiquement après le redémarrage.</string>
+
+    <!-- CPU Ramp Speed -->
+    <string name="cpu_ramp_speed_title">Vitesse de rampe du processeur</string>
+    <string name="cpu_ramp_speed_summary">La rapidité avec laquelle le processeur réagit aux pics de charge soudains</string>
+    <string name="cpu_ramp_speed_not_supported">Non pris en charge par le noyau actuel</string>
+    <string name="cpu_ramp_speed_battery">Batterie</string>
+    <string name="cpu_ramp_speed_default">Défaut (Recommandé)</string>
+    <string name="cpu_ramp_speed_responsive">Réactif</string>
+    <string name="cpu_ramp_speed_footer"><b>Batterie</b> – Réduire les ojectifs de vitesse élevée. Le processeur accélère plus lentement et économise de l\'énergie. Peut sembler légèrement lent lors de courts pics, comme l\'ouverture d\'applications.\n\n<b>Défaut</b> : paramètres de vitesse élevée équilibrés. Fonctionne bien pour un usage général.\n\n<b>Réactif</b> – Objectifs de vitesse plus élevées et taux d\'ajustement plus lent. Le processeur monte en puissance plus rapidement et reste élevé plus longtemps après un pic. Réduit le bégaiement lors des interactions rapides et des jeux au prix d\'une consommation d\'énergie légèrement supérieure.\n\nPrend effet uniquement lorsque le régulateur du processeur est défini sur Intelligent (schedutil).\n\nRéappliqué automatiquement après le redémarrage.</string>
+
+    <!-- Touch Boost -->
+    <string name="touch_boost_title">Boost Tactile</string>
+    <string name="touch_boost_summary">Augmentez brièvement la vitesse du processeur lorsque vous touchez l\'écran</string>
+    <string name="touch_boost_not_supported">Non pris en charge par le noyau actuel</string>
+    <string name="touch_boost_footer">Lorsqu\'il est activé, le processeur monte brièvement à une fréquence plus élevée chaque fois que l\'écran est touché. Cela rend les tapotements, les balayages et le défilement plus rapides en garantissant que le processeur est prêt à gérer les entrées immédiatement.\n\nLe boost dure pendant la durée définie dans Durée du Boost, puis le processeur revient à l\'ajustement normal.\n\nRéappliqué automatiquement après le redémarrage.</string>
+
+    <!-- Big Cores on Touch -->
+    <string name="big_cores_touch_title">Donner la priorité aux grands cœurs (BIG) lors d\'événements tactiles</string>
+    <string name="big_cores_touch_summary">Déplacer les tâches vers des cœurs plus grands lors des événements tactiles</string>
+    <string name="big_cores_touch_not_supported">Non pris en charge par le noyau actuel</string>
+    <string name="big_cores_touch_footer">Lorsqu\'il est activé, le planificateur migre également les tâches en cours d\'exécution vers les cœurs de processeur BIG et PRIME lors des événements tactiles, en plus de toute augmentation de fréquence.\n\nFonctionne mieux lorsqu\'il est combiné avec Boost tactile. Améliore la réactivité tactile dans les applications dont le travail est en file d\'attente au moment où vous interagissez avec l\'écran.\n\nRéappliqué automatiquement après le redémarrage.</string>
+
+    <!-- Boost Duration -->
+    <string name="boost_duration_title">Durée du Boost</string>
+    <string name="boost_duration_summary">Combien de temps le processeur reste boosté après un événement tactile</string>
+    <string name="boost_duration_not_supported">Non pris en charge par le noyau actuel</string>
+    <string name="boost_duration_short">Court — 40ms</string>
+    <string name="boost_duration_normal">Normal — 80ms</string>
+    <string name="boost_duration_default">Défaut — 120ms (Recommandé)</string>
+    <string name="boost_duration_long">Long — 200ms</string>
+    <string name="boost_duration_footer">Contrôle le nombre de millisecondes pendant lesquelles le processeur reste à une fréquence boostée après un événement tactile.\n\n<b>Court (40 ms)</b> – Amplification minimale. Économise la batterie, mais peut ne pas couvrir le cycle de réponse complet pour les applications plus lourdes.\n\n<b>Normal (80 ms)</b> — Une option plus légère qui couvre toujours la plupart des interactions avec l\'interface utilisateur.\n\n<b>Défaut (120 ms)</b> — La valeur par défaut du noyau. Couvre le cycle de réponse complet de l\'interface utilisateur pour la plupart des applications.\n\n<b>Long (200 ms)</b> – Boost étendu. Utile pour les applications avec un rendu d\'image lent, mais augmente sensiblement l\'épuisement de la batterie en cas de saisie tactile fréquente.\n\nCe paramètre ne prend effet que lorsque Boost Tactile est activé.\n\nRéappliqué automatiquement après le redémarrage.</string>
+
+    <!-- Global Reset -->
+    <string name="reset_all_title">Réinitialiser aux valeurs par défaut</string>
+    <string name="reset_all_summary">Restaurer tous les paramètres Performances et Tactiles à leurs valeurs par défaut</string>
+    <string name="reset_all_dialog_title">Réinitialiser tous les paramètres?</string>
+    <string name="reset_all_dialog_message">Toutes les paramètres Performances et Tactile &amp; Saisie seront restaurés aux valeurs par défaut. Les paramètres des accessoires, de l\'écran et de la batterie ne sont pas affectés.</string>
+    <string name="reset_all_confirm">Réinitialiser</string>
+    <string name="reset_all_done">Paramètres restaurés aux valeurs par défaut</string>
+
+    <!-- Image preview -->
+    <string name="image_preview_content_description">Aperçu</string>
+    <string name="image_preview_next_page_content_description">Suivant</string>
+    <string name="image_preview_previous_page_content_description">Précédent</string>
+
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Valeur : %s</string>
+    <string name="custom_seekbar_default_value">par défaut</string>
+    <string name="custom_seekbar_default_value_to_set">Valeur par défaut : %s\nAppuyez longuement pour définir</string>
+    <string name="custom_seekbar_default_value_is_set">La valeur par défaut est définie</string>
 
 </resources>
