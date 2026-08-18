@@ -42,9 +42,10 @@ PRODUCT_PACKAGES += \
     LineageSystemUIOverlayDevice \
     SystemUIOverlayDevice
 
-# Peripheral Manager
+# Peripheral Manager & PipaCore
 PRODUCT_PACKAGES += \
-    XiaomiPeripheralManager
+    XiaomiPeripheralManager \
+    PipaCore
 
 # Permissions
 PRODUCT_COPY_FILES += \
